@@ -6,12 +6,13 @@
   "scripts": {
     "start": "node ./dist/index.js",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepack": "npm run build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^14.0.14",
-    "node-gtk": "^0.4.0"
+    "node-gtk": "^0.4.0",
+    "typescript": "^3.9.5"
   }
 }

@@ -1,0 +1,24 @@
+name: ts-gtk
+version: '1.0'
+summary: A Typescript GTK Starter Template
+description: Opens a basic gtk app
+
+confinement: devmode
+base: core20
+
+parts:
+  ts-gtk:
+    plugin: npm
+    source: https://github.com/kevindurb/ts-gtk.git
+    npm-node-version: 14.2.0
+    build-packages:
+      - build-essential
+      - git
+      - gobject-introspection
+      - libgirepository1.0-dev
+      - libcairo2
+      - libcairo2-dev
+
+apps:
+  ts-gtk:
+    command: npm start
