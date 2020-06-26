@@ -1,5 +1,16 @@
-import { x } from './other';
+import gi from 'node-gtk';
 
-const a = `hello ${x}`;
+const Gtk = gi.require('Gtk', '3.0');
 
-global.log(a);
+gi.startLoop()
+Gtk.init()
+
+const win = new Gtk.Window()
+win.on('destroy', () => Gtk.mainQuit())
+win.on('delete-event', () => false)
+
+win.setDefaultSize(200, 80)
+win.add(new Gtk.Label({ label: 'Hello Gtk+' }))
+
+win.showAll()
+Gtk.main()
